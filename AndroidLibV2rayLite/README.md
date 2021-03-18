@@ -1,1 +1,0 @@
-# AndroidLibV2rayLite
