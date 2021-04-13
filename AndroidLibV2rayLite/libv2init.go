@@ -4,31 +4,31 @@ import (
 	// The following are necessary as they register handlers in their init functions.
 
 	// Required features. Can't remove unless there is replacements.
-	_ "v2ray.com/core/app/dispatcher"
-	_ "v2ray.com/core/app/proxyman/inbound"
-	_ "v2ray.com/core/app/proxyman/outbound"
+	_ "github.com/XTLS/Xray-core/app/dispatcher"
+	_ "github.com/XTLS/Xray-core/app/proxyman/inbound"
+	_ "github.com/XTLS/Xray-core/app/proxyman/outbound"
 
 	// Other optional features.
-	_ "v2ray.com/core/app/dns"
-	_ "v2ray.com/core/app/log"
-	_ "v2ray.com/core/app/policy"
-	_ "v2ray.com/core/app/router"
-	_ "v2ray.com/core/app/stats"
+	_ "github.com/XTLS/Xray-core/app/dns"
+	_ "github.com/XTLS/Xray-core/app/log"
+	_ "github.com/XTLS/Xray-core/app/policy"
+	_ "github.com/XTLS/Xray-core/app/router"
+	_ "github.com/XTLS/Xray-core/app/stats"
 
 	// Inbound and outbound proxies.
-	_ "v2ray.com/core/proxy/blackhole"
-	_ "v2ray.com/core/proxy/dns"
-	_ "v2ray.com/core/proxy/dokodemo"
-	_ "v2ray.com/core/proxy/freedom"
-	_ "v2ray.com/core/proxy/http"
-	_ "v2ray.com/core/proxy/mtproto"
-	_ "v2ray.com/core/proxy/shadowsocks"
-	_ "v2ray.com/core/proxy/socks"
-	_ "v2ray.com/core/proxy/trojan"
-	_ "v2ray.com/core/proxy/vless/inbound"
-	_ "v2ray.com/core/proxy/vless/outbound"
-	_ "v2ray.com/core/proxy/vmess/inbound"
-	_ "v2ray.com/core/proxy/vmess/outbound"
+	_ "github.com/XTLS/Xray-core/proxy/blackhole"
+	_ "github.com/XTLS/Xray-core/proxy/dns"
+	_ "github.com/XTLS/Xray-core/proxy/dokodemo"
+	_ "github.com/XTLS/Xray-core/proxy/freedom"
+	_ "github.com/XTLS/Xray-core/proxy/http"
+	_ "github.com/XTLS/Xray-core/proxy/mtproto"
+	_ "github.com/XTLS/Xray-core/proxy/shadowsocks"
+	_ "github.com/XTLS/Xray-core/proxy/socks"
+	_ "github.com/XTLS/Xray-core/proxy/trojan"
+	_ "github.com/XTLS/Xray-core/proxy/vless/inbound"
+	_ "github.com/XTLS/Xray-core/proxy/vless/outbound"
+	_ "github.com/XTLS/Xray-core/proxy/vmess/inbound"
+	_ "github.com/XTLS/Xray-core/proxy/vmess/outbound"
 
 	// Transport
 	_ "github.com/XTLS/Xray-core/transport/internet/http"
@@ -53,7 +53,7 @@ import (
 	// The following line loads JSON from v2ctl
 	// _ "github.com/XTLS/Xray-core/main/json"
 	// The following line loads JSON internally
-	_ "v2ray.com/core/main/jsonem"
+	_ "v2ray.com/core/main/yaml"
 	// Load config from file or http(s)
 	// _ "github.com/XTLS/Xray-core/main/confloader/external"
 )
