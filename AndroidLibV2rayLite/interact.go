@@ -1,16 +1,22 @@
 package libv2ray
 
 import (
+	"context"
+	"errors"
 	"fmt"
 	"io"
 	"log"
+	"net"
+	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 	"sync"
+	"time"
 
-	"github.com/2dust/AndroidLibV2rayLite/CoreI"
-	"github.com/2dust/AndroidLibV2rayLite/Process/Escort"
-	"github.com/2dust/AndroidLibV2rayLite/VPN"
+	"github.com/2dust/AndroidLibXrayLite/CoreI"
+	"github.com/2dust/AndroidLibXrayLite/Process/Escort"
+	"github.com/2dust/AndroidLibXrayLite/VPN"
 	mobasset "golang.org/x/mobile/asset"
 
 	v2core "github.com/xtls/xray-core/core"
@@ -21,12 +27,12 @@ import (
 	_ "github.com/xtls/xray-core/main/distro/all"
 	v2internet "github.com/xtls/xray-core/transport/internet"
 
-	v2applog "v2ray.com/core/app/log"
-	v2commlog "v2ray.com/core/common/log"
+	v2applog "github.com/xtls/xray-core/app/log"
+	v2commlog "github.com/xtls/xray-core/common/log"
 )
 
 const (
-	v2Assert    = "v2ray.location.asset"
+	v2Asset = "xray.location.asset"
 	assetperfix = "/dev/libv2rayfs0/asset"
 )
 
@@ -140,14 +146,14 @@ func (v *V2RayPoint) shutdownInit() {
 }
 
 func (v *V2RayPoint) pointloop() error {
-	log.Println("loading v2ray config")
+	log.Println("loading core config")
 	config, err := v2serial.LoadJSONConfig(strings.NewReader(v.ConfigureFileContent))
 	if err != nil {
 		log.Println(err)
 		return err
 	}
 
-	log.Println("new v2ray core")
+	log.Println("new core")
 	inst, err := v2core.New(config)
 	if err != nil {
 		log.Println(err)
@@ -156,7 +162,7 @@ func (v *V2RayPoint) pointloop() error {
 	v.status.Vpoint = inst
 	v.statsManager = inst.GetFeature(v2stats.ManagerType()).(v2stats.Manager)
 
-	log.Println("start v2ray core")
+	log.Println("start core")
 	v.status.IsRunning = true
 	if err := v.status.Vpoint.Start(); err != nil {
 		v.status.IsRunning = false
@@ -257,5 +263,5 @@ func CheckVersion() int {
 This func will return libv2ray binding version and V2Ray version used.
 */
 func CheckVersionX() string {
-	return fmt.Sprintf("Libv2rayLite V%d, Core V%s", CheckVersion(), v2core.Version())
+	return fmt.Sprintf("Lib v%d, Xray-core v%s", CheckVersion(), v2core.Version())
 }
