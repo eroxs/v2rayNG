@@ -53,7 +53,7 @@ import (
 	// The following line loads JSON from v2ctl
 	// _ "github.com/XTLS/Xray-core/main/json"
 	// The following line loads JSON internally
-	_ "v2ray.com/core/main/yaml"
+	_ "github.com/XTLS/Xray-core/main/yaml"
 	// Load config from file or http(s)
 	// _ "github.com/XTLS/Xray-core/main/confloader/external"
 )
