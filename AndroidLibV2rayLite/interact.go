@@ -14,9 +14,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/2dust/AndroidLibXrayLite/CoreI"
-	"github.com/2dust/AndroidLibXrayLite/Process/Escort"
-	"github.com/2dust/AndroidLibXrayLite/VPN"
+	"github.com/2dust/AndroidLibV2rayLite/CoreI"
+	"github.com/2dust/AndroidLibV2rayLite/Process/Escort"
+	"github.com/2dust/AndroidLibv2rayLite/VPN"
 	mobasset "golang.org/x/mobile/asset"
 
 	v2core "github.com/xtls/xray-core/core"
