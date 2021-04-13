@@ -31,28 +31,29 @@ import (
 	_ "v2ray.com/core/proxy/vmess/outbound"
 
 	// Transport
-	_ "v2ray.com/core/transport/internet/http"
-	_ "v2ray.com/core/transport/internet/kcp"
-	_ "v2ray.com/core/transport/internet/quic"
-	_ "v2ray.com/core/transport/internet/tcp"
-	_ "v2ray.com/core/transport/internet/tls"
-	_ "v2ray.com/core/transport/internet/udp"
-	_ "v2ray.com/core/transport/internet/websocket"
+	_ "github.com/XTLS/Xray-core/transport/internet/http"
+	_ "github.com/XTLS/Xray-core/internet/kcp"
+	_ "github.com/XTLS/Xray-core/internet/quic"
+	_ "github.com/XTLS/Xray-core/internet/tcp"
+	_ "github.com/XTLS/Xray-core/internet/tls"
+	_ "github.com/XTLS/Xray-core/internet/udp"
+	_ "github.com/XTLS/Xray-core/internet/websocket"
+	_ "github.com/XTLS/Xray-core/internet/grpc"
 
 	// Transport headers
-	_ "v2ray.com/core/transport/internet/headers/http"
-	_ "v2ray.com/core/transport/internet/headers/noop"
-	_ "v2ray.com/core/transport/internet/headers/srtp"
-	_ "v2ray.com/core/transport/internet/headers/tls"
-	_ "v2ray.com/core/transport/internet/headers/utp"
-	_ "v2ray.com/core/transport/internet/headers/wechat"
-	_ "v2ray.com/core/transport/internet/headers/wireguard"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/http"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/noop"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/srtp"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/tls"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/utp"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/wechat"
+	_ "github.com/XTLS/Xray-core/transport/internet/headers/wireguard"
 
 	// JSON config support. Choose only one from the two below.
 	// The following line loads JSON from v2ctl
-	// _ "v2ray.com/core/main/json"
+	// _ "github.com/XTLS/Xray-core/main/json"
 	// The following line loads JSON internally
 	_ "v2ray.com/core/main/jsonem"
 	// Load config from file or http(s)
-	// _ "v2ray.com/core/main/confloader/external"
+	// _ "github.com/XTLS/Xray-core/main/confloader/external"
 )
